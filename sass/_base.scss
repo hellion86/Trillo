@@ -17,6 +17,15 @@
   --line: 1px solid var(--color-grey-light-2);
 }
 
+// SASS VARIABLES FOR MEDIA QUERIES
+
+//1200px / 16 = 75
+$bp-largest: 75em;
+//1100px / 16
+$bp-large: 68.75em;
+//900px / 16
+$bp-medium: 56.25em;
+
 //global reset
 * {
   margin: 0;
@@ -31,7 +40,13 @@
 
 html {
   box-sizing: border-box;
+  //10px
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    // 8px
+    font-size: 50%;
+  }
 }
 
 body {
