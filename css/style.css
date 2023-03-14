@@ -1,6 +1,6 @@
 :root {
   --color-primary: #eb2f64;
-  --color-primary-light: ##ff3366;
+  --color-primary-light: #ff3366;
   --color-primary-dark: #ba265d;
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
@@ -85,6 +85,7 @@ body {
   display: flex;
   font-size: inherit;
   flex-direction: column;
+  align-items: center;
   flex: 1; }
 
 .logo {
@@ -370,3 +371,45 @@ body {
     color: var(--color-grey-light-2);
     font-family: sans-serif;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    transition: all 0.2s; }
+  .btn__invisible {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0;
+    width: 100%;
+    left: 0;
+    top: -100%;
+    transition: all 0.2s; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s ease-in-out infinite; }
